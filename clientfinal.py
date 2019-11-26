@@ -11,15 +11,15 @@ from socket import AF_INET, SOCK_STREAM
 from threading import Thread
 from tkinter import *
 
-firstclick = True
+fclick = True
 
 def on_entry_click(event):
     """function call for first click"""        
-    global firstclick
+    global fclick
 
-    if firstclick: #firstclick if condition 
-        firstclick = False
-        entry_field.delete(0, "end") #deletes text in typing box when clicked 
+    if fclick: #firstclick if condition 
+        fclick = False
+        text_field.delete(0, "end") #deletes text in typing box when clicked 
 
 
 def receive():
@@ -80,8 +80,8 @@ send_button.pack()
 root.protocol("WM_DELETE_WINDOW", on_closing)
 
 #Code for host ip and port (to be changed in the commercial version so no input is needed
-HOST = input('Enter host: ')
-PORT = input('Enter port: ')
+HOST = 'localhost'
+PORT = 33002
 
 if not PORT: #to be removed for non test version (no input needed for the final release)
     PORT = 33002

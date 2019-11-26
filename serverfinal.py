@@ -16,7 +16,7 @@ def accept_incoming_connections():
     while True:
         client, client_address = SERVER.accept() #recieves client name and address
         print("%s:%s has connected." % client_address)
-        client.send(bytes("Doge Financial Messaging Service", "utf8"))
+        client.send(bytes("Doge Financial Messaging Service, please type your name in the textbar below", "utf8"))
         addresses[client] = client_address #adds client address to dictionary 
         Thread(target=handle_client, args=(client,)).start() #thread management
 
